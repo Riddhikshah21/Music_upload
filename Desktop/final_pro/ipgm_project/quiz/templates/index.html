@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Homepage</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<style>
+
+.listt{
+    font-weight: 100px;
+    font-size: 20px;
+    font-family: italic;
+    color: white;
+}
+a{
+    color: #0fe5e2;
+}
+a:hover{
+    color: white;
+}
+div.card-deck.jumbotron.jumbotron-fluid{
+  padding-right: 80px;
+  padding-left: 80px;
+}
+.card:hover{
+  -webkit-box-shadow:-1px 9px 40px -12px rgb(0,0,0);
+  -moz-box-shadow:-1px 9px 40px -12px rgb(0,0,0);
+  box-shadow:-1px 9px 40px -12px rgb(0,0,0);
+}
+.card-title{
+  text-align: center;
+}
+.carousel{
+    background: #a3ebed;
+}
+.carousel-item {
+  height: 100vh;
+  min-height: 350px;
+  background: no-repeat center center scroll;
+  background-size: cover;
+}
+.bs-example{
+	margin: 0px;
+}
+.img{
+    width: 50%;
+    height: 50%;
+}
+.classy-navbar .nav-brand {
+    max-width: 130px;
+}
+.classy-navbar .nav-brand {
+    font-size: 26px;
+    font-weight: 500;
+    color: #565656;
+    display: inline-block;
+    margin-right: 30px;
+}
+#logo img{
+  width: 60px;
+  height: 50px;
+}
+*{
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+hr{
+  margin-top:20px;
+  background-color: #fff;
+  border-top: 3px #8c8b8b;
+  border-width: 2.5px;
+}
+.hr1{
+  margin-top:20px;
+  background-color: #fff;
+  border-top: 5px solid #8c8b8b;
+  border-width: 3px;
+}
+.row{
+    margin-left: 30px;
+}
+.h11{
+    background-color:  linear-gradient(to left, black , gray);
+}
+li{
+  font-size: 15px;
+}
+</style>
+</head>
+<body style="background-color: black">
+<nav style="background-color:black; font-family: 'Rubik', sans-serif;" class="navbar navbar-expand-lg navbar-light bg-light-blue fixed-top solid-header" id="mainNav">
+  <div class="container">
+    <a style="color: lightblue;" class="navbar-brand" href="{% url 'home' %}" id="logo"><img src="https://img.pngio.com/music-logo-png-95-images-in-collection-page-1-music-logo-png-702_695.png" alt="Music"><b>BigSounds</b></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        {% if user.is_authenticated %}
+        <li class="nav-item">
+          <b><a style="color: lightblue;font-size:20px;" class="nav-link" href="{% url 'music:musicdetaillist' %}">All Music</a></b>
+        </li>
+        <li class="nav-item">
+          <b><a style="color: lightblue;font-size:20px;" class="nav-link" href="{% url 'music:musicview' %}">Post Music</a></b>
+        </li>
+        <li class="nav-item">
+          <b><a style="color: lightblue;font-size:20px;" class="nav-link" href="{% url 'about_us' %}">About Us</a></b>
+        </li>
+        <li class="nav-item">
+          <b><a style="color: lightblue;font-size:20px;" class="nav-link" href="{% url 'accounts:logout' %}">Logout</a></b>
+        </li>
+        {% else %}
+        <li class="nav-item">
+          <b><a style="color: lightblue;font-size:20px;" class="nav-link" href="{% url 'music:musicdetaillist' %}">All Music</a></b>
+        </li>
+        <li class="nav-item">
+          <b><a style="color: lightblue;font-size:20px;" class="nav-link" href="{% url 'about_us' %}">About Us</a></b>
+        </li>
+        <li class="nav-item">
+          <b><a style="color: lightblue;font-size:20px;" class="nav-link" href="{% url 'accounts:login' %}">Login</a></b>
+        </li>
+        <li class="nav-item">
+          <strong><a style="color: lightblue;font-size:20px;" class="nav-link" href="{% url 'accounts:signup' %}">Sign-Up</a></strong>
+        </li>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<header>
+<div class="bs-example">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Carousel indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+        <!-- Wrapper for carousel items -->
+        <div class="carousel-inner">
+
+            <div class="carousel-item active">
+                <img src="https://images.pexels.com/photos/2952834/pexels-photo-2952834.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=800" alt="First Slide">
+            </div>
+            <div class="carousel-item">
+                <img src="https://images.pexels.com/photos/144428/pexels-photo-144428.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=800" alt="Second Slide">
+            </div>
+            <div class="carousel-item">
+                <img src="https://images.pexels.com/photos/2728557/pexels-photo-2728557.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=800" alt="Third Slide">
+            </div>
+        </div>
+        <!-- Carousel controls -->
+        <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#myCarousel" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
+    </div>
+</div><br><br><br>
+
+</header><br><br><br>
+<footer style=" background: linear-gradient(to bottom, black , lightblue);">
+<hr>
+    <b><h1 class="font_0" style="text-align: center; color: white;font-size: 75px;font-family: 'Rubik', serif;
+ font-weight: 300px;"><span>FEEL THE VIBE</span></h1></b>
+<hr><br><br><br>
+<div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6">
+                <img style="height: 45 0px;width:600px;margin-top: 30px;" src="https://imgix.bustle.com/uploads/getty/2018/12/20/db6f3efd-ed84-4164-9be9-a70d7a662852-getty-1073350848.jpg">
+            </div>
+            <div class="col-lg-6">
+                <p style="margin-top: 60px;color: lightblue;font-size: 60px;font-weight: 200;font-family: 'Dancing Script', cursive;
+">All your favorite music. Best sound quality available.</p>
+            </div>
+        </div>
+    </div><br><br>
+    <div class="container-fluid" style="margin-top: 40px;">
+        <div class="row">
+            <div class="col-lg-6 ">
+                <br><h1 style="color: lightblue;font-weight:400px;font-size: 60px;font-family: 'Rubik', serif">The music you love.</h1>
+                <p style="margin-top: 60px;color: black;font-size: 35px;font-weight:150;font-family: 'Dancing Script', cursive;
+">With over thousands of tracks and tons of exclusive music libraries, Big Sounds is here to bring you closer to the artists you listen to and upload your music.</p>
+            </div>
+            <div class="col-lg-6">
+                <img style="height: 400px;width:600px;margin-top: 30px;border-radius:20px;" src="https://images.pexels.com/photos/167636/pexels-photo-167636.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
+            </div>
+        </div>
+    </div><br><br><br><br>
+    <div  class="h11">
+    <b><h1 class="font_0" style="text-align: center; color: black;font-size: 75px;font-family: 'Rubik', serif;font-weight: 400px;"><span>Our Team</span></h1></b>
+
+
+<div style="margin-top: 80px;text-align: center;" class="container">
+
+<div class="card-deck">
+  <div class="card">
+    <img  src="https://images.pexels.com/photos/1370545/pexels-photo-1370545.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">PARTH TANK</h5>
+      <p class="card-text">First Member</p>
+      <p class="card-text"><small class="text-muted">Software Developer</small></p>
+    </div>
+  </div>
+  <div class="card">
+    <img  src="https://images.pexels.com/photos/1370545/pexels-photo-1370545.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">RIDDHI SHAH</h5>
+      <p class="card-text">Second Member</p>
+      <p class="card-text"><small class="text-muted">Software Developer</small></p>
+    </div>
+  </div>
+  <div class="card">
+    <img  src="https://images.pexels.com/photos/1370545/pexels-photo-1370545.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">RITWIK BISHT</h5>
+      <p class="card-text">Third Member</p>
+      <p class="card-text"><small class="text-muted">Software Developer</small></p>
+    </div>
+  </div>
+</div>
+</div><br><br><br>
+
+<div class="container-fluid" style="background-color: black;color: grey;height: 300px;font-family: sans-serif;text-align: center;"><br>
+    <div class="row" >
+        <div class="col-lg-4">
+            <u><h2>About Us</h2><br></u>
+            <p style="font-family: italic; font-weight: 50px;color:#0fe5e2;font-size:20px;">Big Sounds is a music streaming service with high fidelity sound, along with expertly curated playlists and original content and trusted source for music and culture.</p>
+            <div></div>
+        </div>
+        <div class="col-lg-4" style="">
+             <u><h2>Account</h2><br></u>
+             <li><a href="accounts:"templates/signup"">About Us</a><br></li>
+             <li><a href="index.html">Home Page</a><br></li>
+             <li><a href="signup.html">Sign Up Page</a></li>
+        </div>
+        <div class="col-lg-4">
+             <u><h2>Contact Us</h2><br></u>
+             <li><a href="https://www.djsce.ac.in">DJSCE</a><br></li>
+             <li><a href="https://www.facebook.com">Facebook</a><br></li>
+             <li><a href="https://www.instagram.com">Instagram</a></li>
+        </div>
+    </div>
+</div>
+</footer>
+
+</body>
+</html>

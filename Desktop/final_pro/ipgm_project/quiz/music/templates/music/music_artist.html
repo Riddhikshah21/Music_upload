@@ -1,0 +1,211 @@
+<!--DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div class="container">
+      {% for musics in artist %}
+
+      <h1><strong>Music Name: </strong>{{musics.music_name}}</h1>
+      <p><strong>Posted on: </strong>{{musics.added_date}}</p>
+      <p><strong>Artist: </strong>{{musics.user.username}}</p>
+
+      <img src="{{ musics.music_logo.url }}" alt="no image" style="width:100px;">
+      <audio controls>
+        <source src="{{ musics.file.url }}" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+{% endfor %}
+    </div>
+  </body>
+</html-->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Songs</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<style type="text/css">
+@import 'https://fonts.googleapis.com/css?family=Reem+Kufi';
+body {
+  background: linear-gradient(to left, #657eab , #04193e);
+  display:flex;
+  flex-direction: column;
+  height: 100%;
+}
+@keyframes wave {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.music-card {
+  background: #fff;
+  box-shadow: 9px 7px 37px -6px rgba(0,0,0,0.45);
+  overflow: hidden;
+  position: relative;
+  width: 300px;
+  height: 450px;
+}
+
+.image {
+  background: url('images.jpg') no-repeat 50%;
+  background-size: cover;
+  position: absolute;
+  z-index: 4;
+  opacity: 0.8;
+  height: 300px;
+  width: 300px;
+}
+
+.image:after {
+  height: 100px;
+  content: '';
+  top: 200px;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  background:linear-gradient(rgba(9, 2, 4, 0), #539DD2);
+}
+
+.wave {
+  position: absolute;
+  height: 750px;
+  width: 750px;
+  opacity: 0.7;
+  left: 0;
+  top: 0;
+  margin-left: -70%;
+  margin-top: -130%;
+  background: radial-gradient(#60BBF1, #317CB1);
+}
+
+.wave:nth-child(2),
+.wave:nth-child(3) {
+  top: 10px;
+}
+
+.playing .wave {
+  border-radius: 40%;
+  animation: wave 3000ms infinite linear;
+}
+/* when stop */
+.wave {
+  border-radius: 40%;
+  animation: wave 55s infinite linear;
+}
+
+.playing .wave:nth-child(2) {
+  animation-duration: 4000ms;
+}
+/* when stop */
+.wave:nth-child(2) {
+  animation-duration: 50s;
+}
+
+.playing .wave:nth-child(3) {
+  animation-duration: 5000ms;
+}
+/* when stop */
+
+.info {
+  position: absolute;
+  bottom: 35px;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.title {
+  font-size: 1.8em;
+  font-weight: 500;
+  color: black solid;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  font-family: 'Reem Kufi', sans-serif;
+}
+
+.artist {
+  color: black;
+  font-size: 1.6em;
+  font-family: 'Reem Kufi', sans-serif;
+}
+.fa {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 18px;
+  cursor: pointer;
+  color: #555;
+}
+.fa-play {
+  display: none;
+}
+ul {
+  list-style-type: none;
+  margin: 10;
+  padding: 10;
+  overflow: hidden;
+  background-color: transparent;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 24px 24px;
+  text-decoration: none;
+  font-size: 25px;
+}
+
+li a:hover {
+  color: lightblue;
+}
+.column {
+  float: left;
+  width: 33%;
+  padding: 0 10px;
+}
+</style>
+<body>
+<div>
+
+<ul>
+  <li><img style="width:60px;height: 60px;margin-top: 20px;" src="https://img.pngio.com/music-logo-png-95-images-in-collection-page-1-music-logo-png-702_695.png"></li>
+  <li><a class="active" href="#home">Home</a></li>
+  <li><a href="#about">All Songs</a></li>
+  <li><a href="genre.html">Genre</a></li>
+</ul>
+</div><br><br><br>
+<div class="container">
+  <div class="row">
+  <div class="column">
+  <div class="col-md-4">
+    <div class='music-card playing'>
+
+  <div class='image'></div>
+  <div class='wave'></div>
+  <div class='wave'></div>
+  <div class='wave'></div>
+  <div class='info'>
+    <b><h1 class='title'>Music Artist</h1></b>
+    <div class='artist'>Shawn Mendes</div>
+  </div>
+    </div>
+  <iframe width="0%" height="0" scrolling="no" frameborder="no" src="images.jpg"></iframe>
+</div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+</html>

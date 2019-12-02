@@ -1,0 +1,99 @@
+<!--!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>this is music form page</h1>
+    <form method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">submit</button>
+    </form>
+
+  </body>
+</html-->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Euphoria+Script|Rouge+Script&display=swap" rel="stylesheet">
+
+<style>
+
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.bg-image {
+  /* The image used */
+  background-image: url("https://images.pexels.com/photos/1587927/pexels-photo-1587927.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500");
+
+  /* Add the blur effect */
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Position text in the middle of the page/image */
+.bg-text {
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  border: 3px solid #f1f1f1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 80%;
+  padding: 20px;
+  text-align: center;
+}
+img{
+  float: left;
+  width: 60px;
+  height: 60px;
+}
+.forms{
+  font-size: 20px;
+  color:white;
+}
+</style>
+</head>
+<body>
+<div class="bg-image"></div>
+
+<div class="bg-text">
+<a href="{% url 'home' %}"><img class="fg-image" src="https://img.pngio.com/music-logo-png-95-images-in-collection-page-1-music-logo-png-702_695.png"></a>
+<h1 style="font-family: 'Euphoria Script', cursive;color:#00ffbf;
+">We'll let the music speak for you.</h1>
+<h1 style="font-size:50px;font-family: 'Pinyon script',cursive;text-align: center;color: aqua;">Welcome to Big Sounds.</h1>
+  <form method="POST" enctype="multipart/form-data" class="forms">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <button style="font-size: 25px;border-radius: 6px; background: linear-gradient(to top, #e0ccea ,#2a053d);width:260px; height:50px;" type="submit">Upload my music</button><br><br>
+</form>
+</div>
+
+</body>
+</html>

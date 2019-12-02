@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+{% load bootstrap3 %}
+{% load static %}
+<html>
+<head>
+	<title>signup Page</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style_login.css' %}">
+</head>
+<body>
+<div  class="right">
+	<div class="login-box">
+	<h2>Sign-Up</h2>
+  <form method="POST">
+      {% csrf_token %}
+	<div class="text-box">
+		<i class="fa fa-user" aria-hidden="true"></i>
+		<input type="text" placeholder="Enter username" name="username" id="id_username">
+	</div>
+	<div class="text-box">
+		<i class="fa fa-envelope-o" aria-hidden="true"></i>
+		<input type="email" placeholder="Enter email-id" name="email" id="id_email">
+	</div>
+	<div class="text-box">
+		<i class="fa fa-key" aria-hidden="true"></i>
+		<input type="password" placeholder="Enter password" name="password1" id="id_password1">
+	</div>
+	<div class="text-box">
+		<i class="fa fa-unlock-alt" aria-hidden="true"></i>
+		<input type="password" placeholder="Confirm password" name="password2" id="id_password2">
+	</div><br><br>
+		<button type="submit" class="btn btn-primary">Sign Up</button>
+
+
+  </form>
+	<a href="{% url 'home' %}">
+	<button type="submit" class="btn btn-primary">Cancel</button></a>
+</div>
+</div>
+</body>
+</html>
