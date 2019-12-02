@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+    background-color: black;
+
+  display:flex;
+  flex-direction: column;
+  height: 100%;
+
+}
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6);
+  padding: 18px;
+  text-align: center;
+  width: 300px;
+  height: 400px;
+  background: linear-gradient(to left, #657eab , #04193e);
+}
+.card:hover{
+  -webkit-box-shadow:-1px 9px 40px -12px rgba(0,0,0,0.75);
+  -moz-box-shadow:-1px 9px 40px -12px rgba(0,0,0,0.75);
+  box-shadow:-1px 9px 40px -12px rgba(255,255,255);
+
+}
+ul {
+  list-style-type: none;
+  margin: 10;
+  padding: 10;
+  overflow: hidden;
+  background-color: transparent;
+}
+
+li {
+  float: left;
+  }
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 24px 24px;
+  text-decoration: none;
+  font-size: 30px;
+}
+
+li a:hover {
+  color: #499de3;
+}
+.container{
+  padding: 2px 16px;
+}
+.r1{
+  margin-top: 20px;
+}
+nav{
+  background-color: transparent;
+}
+</style>
+</head>
+<body>
+
+<nav> 
+  
+  
+<ul>
+  <a href="index.html"><li><img style="width:60px;height: 60px;margin-top: 15px;margin-right: 10px;" src="https://img.pngio.com/music-logo-png-95-images-in-collection-page-1-music-logo-png-702_695.png"></li></a>
+  <li><a href="song.html">All Songs</a></li>
+  <li><a href="song.html">Login</a></li>  
+  <li><a href="song.html">About Us</a></li>
+</ul>
+</nav>
+  <h1 style="color: white;font-size: 50px;font-family: 'Cookie',cursive;margin-left: 30px;">Genre-1:</h1>
+
+<div class="r">
+<div class="row">
+<div class="column">
+  <div class="col-md-4">
+<div class="card">
+  <img src="images.jpg" alt="Avatar" style="width:260px;height: 230px;">
+  <div class="container">
+    <h2><b>Music 1</b></h2>
+    <h3 style="text-align: left;">Artist Name:</h3>
+    <h4 style="text-align: left;">Date:</h4>
+  </div>
+</div>
+</div>
+</div>
+
+<div class="column">
+  <div class="col-md-4">
+<div class="card">
+  <img src="images.jpg" alt="Avatar" style="width:260px;height: 230px;">
+  <div class="container">
+    <h2><b>Music 2</b></h2>
+    <h3 style="text-align: left;">Artist Name:</h3>
+    <h4 style="text-align: left;">Date:</h4>
+  </div>
+</div>
+</div>
+</div>
+
+<div class="column">
+  <div class="col-md-4">
+<div class="card">
+  <img src="images.jpg" alt="Avatar" style="width:260px;height: 230px;">
+  <div class="container">
+    <h2><b>Music 3</b></h2>
+    <h3 style="text-align: left;">Artist Name:</h3>
+    <h4 style="text-align: left;">Date:</h4>
+  </div>
+</div>
+</div>
+</div>
+
+
+<div class="column">
+  <div class="col-md-4">
+<div class="card">
+  <img src="images.jpg" alt="Avatar" style="width:260px;height: 230px;">
+  <div class="container">
+    <h2><b>Music 4</b></h2>
+    <h3 style="text-align: left;">Artist Name:</h3>
+    <h4 style="text-align: left;">Date:</h4>
+  </div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+  <h1 style="color: white;font-size: 50px;font-family: 'Cookie',cursive;margin-left: 30px;">Genre-2:</h1>
+
+
+<div class="r1">
+<div class="row">
+<div class="column">
+  <div class="col-md-4">
+<div class="card">
+  <img src="images.jpg" alt="Avatar" style="width:260px;height: 230px;">
+  <div class="container">
+    <h2><b>Music 1</b></h2>
+    <h3 style="text-align: left;">Artist Name:</h3>
+    <h4 style="text-align: left;">Date:</h4>
+  </div>
+</div>
+</div>
+</div>
+
+<div class="column">
+  <div class="col-md-4">
+<div class="card">
+  <img src="images.jpg" alt="Avatar" style="width:260px;height: 230px;">
+  <div class="container">
+    <h2><b>Music 2</b></h2>
+    <h3 style="text-align: left;">Artist Name:</h3>
+    <h4 style="text-align: left;">Date:</h4>
+  </div>
+</div>
+</div>
+</div>
+
+<div class="column">
+  <div class="col-md-4">
+<div class="card">
+  <img src="images.jpg" alt="Avatar" style="width:260px;height: 230px;">
+  <div class="container">
+    <h2><b>Music 3</b></h2>
+    <h3 style="text-align: left;">Artist Name:</h3>
+    <h4 style="text-align: left;">Date:</h4>
+  </div>
+</div>
+</div>
+</div>
+
+
+<div class="column">
+  <div class="col-md-4">
+<div class="card">
+  <img src="images.jpg" alt="Avatar" style="width:260px;height: 230px;">
+  <div class="container">
+    <h2><b>Music 4</b></h2>
+    <h3 style="text-align: left;">Artist Name:</h3>
+    <h4 style="text-align: left;">Date:</h4>
+  </div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+
+</body>
+</html>
